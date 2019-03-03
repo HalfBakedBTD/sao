@@ -3,7 +3,7 @@ const Discord = require("discord.js");
 const fs = require("fs");
 const bot = new Discord.Client({disableEveryone: true});
 bot.commands = new Discord.Collection();
-const players = require("./players.json");
+
 
 fs.readdir("./commands/", (err, files) => {
 
@@ -23,17 +23,11 @@ fs.readdir("./commands/", (err, files) => {
 
 });
 
-
 bot.on("ready", async () => {
   console.log(`${bot.user.username} is online!`);
 
-  bot.user.setGame(`//help | ${bot.guilds.size} servers.`);
+  bot.user.setGame("//help");
 });
-
-bot.on('guildCreate', guild => {
-  bot.user.setGame(`//help | ${bot.guilds.size} servers.`);
-});
-
 
 bot.on("message", async message => {
   if(message.author.bot) return;
@@ -42,10 +36,10 @@ bot.on("message", async message => {
   let prefixes = JSON.parse(fs.readFileSync("./prefixes.json", "utf8"));
   if(!prefixes[message.guild.id]){
     prefixes[message.guild.id] = {
-      prefixes: "//"
+      prefixes: botconfig.prefix
     };
   }
-  
+
   let prefix = prefixes[message.guild.id].prefixes;
   let messageArray = message.content.split(" ");
   let cmd = messageArray[0];
@@ -56,7 +50,7 @@ bot.on("message", async message => {
   
   let commandfile = bot.commands.get(cmd.slice(prefix.length));
   if(commandfile) commandfile.run(bot,message,args);
-  
+ 
 });
 
 bot.login(process.env.BOT_TOKEN);
