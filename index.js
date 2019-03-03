@@ -4,7 +4,7 @@ const fs = require("fs");
 const bot = new Discord.Client({disableEveryone: true});
 bot.commands = new Discord.Collection();
 let players = require("./players.json");
-
+let bounty = require("./bounty.json");
 
 fs.readdir("./commands/", (err, files) => {
 
@@ -62,6 +62,12 @@ bot.on("message", async message => {
       xp: 0,
       lvlxp: 50,
       ct: false
+    }
+  }
+  
+  if(!bounty[maid]) {
+    bounty[maid] = {
+      kills: 0
     }
   }
   
