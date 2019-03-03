@@ -49,6 +49,18 @@ bot.on("message", async message => {
     return
   }
   
+  let maid = message.author.id;
+  
+  if(!players[maid]) {
+    players[maid] = {
+      coins: 0,
+      health: 50,
+      maxhealth: 50,
+      loction: "Safezone",
+      guild: "None"
+    }
+  }
+  
   let commandfile = bot.commands.get(cmd.slice(prefix.length));
   if(commandfile) commandfile.run(bot,message,args);
  
