@@ -26,13 +26,17 @@ module.exports.run = async (bot, message, args) => {
   if(!players[cUser.id]) {
     return message.channel.send(`It looks like ${cUser} has not started playing yet.`);
   }
-  
-  let cName = players[cUser.id].name;
+  let cid = cUser.id;
+  let cCoins = players[cid].coins;
+  let cHealth = players[cid].health;
+  let cMHealth = players[cid].maxhealth;
+  let cLoc = players[cid].loction;
+  let cGuild = players[cid].guild;
   
   //return message.reply(`**${cUser}** has:\n\n💰 Coins: ${plCoins}\n\n🏦 Bank: ${plBank}\n\n⛹ Net Worth: ${plNet}`)
     let balEmbed = new Discord.RichEmbed()
     .setColor('#2ecc71')
-    .setDescription(`**${cUser}**\n O`)
+    .setDescription(`**${cUser}**\nCoins: ${cCoins}\nHealth: ${cHealth}/${cMHealth}\nLocation: ${cLoc}\nGuild: ${cGuild}`)
     
     return message.channel.send(balEmbed)
 }
