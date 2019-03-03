@@ -10,12 +10,16 @@ module.exports.run = async (bot, message, args) => {
       return message.channel.send(`You have not yet began to play.`);
     }
 
-    let uName = players[maid].name;
+    let uCoins = players[maid].coins;
+    let uHealth = players[maid].health;
+    let uMHealth = players[maid].maxhealth;
+    let uLoc = players[maid].location;
+    let uGuild = players[maid].guild;
 
     //return message.reply(`you have:\n\n💰 Coins: ${uCoins}\n\n🏦 Bank: ${uBank}\n\n⛹ Net Worth: ${uNet}`)
     let balEmbed = new Discord.RichEmbed()
     .setColor('#2ecc71')
-    .setDescription(`**${uName}**/n O`)
+    .setDescription(`**<@${maid}>**/nCoins: ${uCoins}/nHealth: ${uHealth}/${uMHealth}/nLocation: ${uLoc}/nGuild: ${uGuild}`)
     
     return message.channel.send(balEmbed)
   }
@@ -28,7 +32,7 @@ module.exports.run = async (bot, message, args) => {
   //return message.reply(`**${cUser}** has:\n\n💰 Coins: ${plCoins}\n\n🏦 Bank: ${plBank}\n\n⛹ Net Worth: ${plNet}`)
     let balEmbed = new Discord.RichEmbed()
     .setColor('#2ecc71')
-    .setDescription(`**${cName}**/n O`)
+    .setDescription(`**${cUser}**/n O`)
     
     return message.channel.send(balEmbed)
 }
