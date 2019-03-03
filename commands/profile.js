@@ -1,8 +1,9 @@
 const Discord = require("discord.js");
 let players = require("../players.json");
-let maid = message.author.id;
+
 
 module.exports.run = async (bot, message, args) => {
+  let maid = message.author.id;
   let cUser = message.guild.member(message.mentions.users.first()) || message.guild.members.get(args[0]);
   if (!cUser) {
     if(!players[maid]) {
