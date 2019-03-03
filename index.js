@@ -57,7 +57,11 @@ bot.on("message", async message => {
       health: 50,
       maxhealth: 50,
       loction: "Safezone",
-      guild: "None"
+      guild: "None",
+      lvl: 1,
+      xp: 0,
+      lvlxp: 50,
+      ct: false
     }
   }
   
