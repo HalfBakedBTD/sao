@@ -17,7 +17,11 @@ module.exports.run = async (bot, message, args) => {
       health: 50,
       maxhealth: 50,
       loction: "Safezone",
-      guild: "None"
+      guild: "None",
+      lvl: 1,
+      xp: 0,
+      lvlxp: 50,
+      ct: false
     }
     return message.channel.send('User is now regestered into the system.');
   } else {
