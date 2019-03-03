@@ -65,6 +65,15 @@ bot.on("message", async message => {
     }
   }
   
+  while (players[maid].xp > players[maid].lvlxp) {
+    players[maid].xp -= players[maid].lvlxp
+    players[maid].lvlxp = players[maid].lvlxp * 2
+    players[maid].health += 50
+    players[maid].maxhealth += 50
+    players[maid].coins += 5 * players[maid].lvl
+    message.channel.send(`<@${maid}> is now level ${players[maid].level}!`)
+  }
+  
   let commandfile = bot.commands.get(cmd.slice(prefix.length));
   if(commandfile) commandfile.run(bot,message,args);
  
