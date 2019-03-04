@@ -12,7 +12,7 @@ module.exports.run = async (bot, message, args) => {
   if(isNaN(args[0])) return message.reply("please supply a number of which floor you wish to travel to! Floor 0 is the safezone.");
   let numb = parseInt(args[0]);
   let inp = (Math.floor(numb));
-  if (inp > 0) {
+  if (inp > 100) {
     return message.channel.send("There are only 100 floors.");
   }  
   
