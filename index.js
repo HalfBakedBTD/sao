@@ -64,7 +64,8 @@ bot.on("message", async message => {
       xp: 0,
       lvlxp: 50,
       ct: false,
-      quest: 1
+      quest: 1,
+      cd: false
     }
   }
   
