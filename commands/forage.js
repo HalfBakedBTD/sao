@@ -14,26 +14,26 @@ module.exports.run = async (bot, message, args) => {
   let lootDie = Math.floor(Math.random() * 1) + 1; 
   lootDie = lootDie + stats[maid].foraging
   if (dieAmt > 950) {
-    inv[maid].foragelootbag += lootDie
+    inv[maid].foragelootbag += 1
     message.channel.send(`<@${message.author.id}> has went foraging and won a Foraging Lootbag.`);
-  } else if (dieAmt < 800) {
+  } else if (dieAmt > 800) {
     inv[maid].wheat += lootDie
-    message.channel.send(`<@${message.author.id}> has went foraging and won 1 wheat.`);
+    message.channel.send(`<@${message.author.id}> has went foraging and won ${lootDie} wheat.`);
   } else if (dieAmt > 650) {
     inv[maid].fruit += lootDie
-    return message.channel.send(`<@${message.author.id}> has went foraging and won 1 fruit.`);
+    return message.channel.send(`<@${message.author.id}> has went foraging and won ${lootDie} fruit.`);
   } else if (dieAmt > 500) {
     inv[maid].root += lootDie
-    message.channel.send(`<@${message.author.id}> has went foraging and won 1 fruit.`);
+    message.channel.send(`<@${message.author.id}> has went foraging and won ${lootDie} root.`);
   } else if (dieAmt > 350) {
     inv[maid].egg += lootDie
-    message.channel.send(`<@${message.author.id}> has went foraging and won 1 egg.`);
+    message.channel.send(`<@${message.author.id}> has went foraging and won ${lootDie} eggs.`);
   } else if (dieAmt > 100) {
     inv[maid].sticks += lootDie
-    message.channel.send(`<@${message.author.id}> has went foraging and won 1 stick.`);
+    message.channel.send(`<@${message.author.id}> has went foraging and won ${lootDie} sticks.`);
   } else if (dieAmt > 0) {
     players[maid].coins += lootDie
-    message.channel.send(`<@${message.author.id}> has went foraging and won 1 `);
+    message.channel.send(`<@${message.author.id}> has went foraging and won ${lootDie} coins`);
   }
   let forDie = Math.floor(Math.random() * 9) + 1;
   if (forDie > 6) {
