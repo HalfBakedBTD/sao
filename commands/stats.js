@@ -18,11 +18,12 @@ module.exports.run = async (bot, message, args) => {
     let uAL = stats[maid].alertness;
     let uLUCK = stats[maid].luck;
     let uFOR = stats[maid].foraging;
+    let uMIN = stats[maid].mining;
 
     //return message.reply(`you have:\n\n💰 Coins: ${uCoins}\n\n🏦 Bank: ${uBank}\n\n⛹ Net Worth: ${uNet}`)
     let balEmbed = new Discord.RichEmbed()
     .setColor('#2ecc71')
-    .setDescription(`**<@${maid}>**\nAttack: ${uAT}\nDefence: ${uDEF}\nLooting: ${uLOOT}\nFishing: ${uFISH}\nForaging: ${uFOR}\nAgility: ${uAG}\nAlertness: ${uAL}\nLuck: ${uLUCK}`);
+    .setDescription(`**<@${maid}>**\nAttack: ${uAT}\nDefence: ${uDEF}\nLooting: ${uLOOT}\nFishing: ${uFISH}\nForaging: ${uFOR}\nMining: ${uMIN}\nAgility: ${uAG}\nAlertness: ${uAL}\nLuck: ${uLUCK}`);
     
     return message.channel.send(balEmbed)
   }
@@ -37,11 +38,12 @@ module.exports.run = async (bot, message, args) => {
   let pAL = stats[cUser.id].alertness;
   let pLUCK = stats[cUser.id].luck;
   let pFOR = stats[cUser.id].foraging;
+  let pMIN = stats[cUser.id].mining
 
     //return message.reply(`you have:\n\n💰 Coins: ${uCoins}\n\n🏦 Bank: ${uBank}\n\n⛹ Net Worth: ${uNet}`)
     let balEmbed = new Discord.RichEmbed()
     .setColor('#2ecc71')
-    .setDescription(`**${cUser}**\nAttack: ${pAT}\nDefence: ${pDEF}\nLooting: ${pLOOT}\nFishing: ${pFISH}\nForaging: ${pFOR}\nAgility: ${pAG}\nAlertness: ${pAL}\nLuck: ${pLUCK}`);
+    .setDescription(`**${cUser}**\nAttack: ${pAT}\nDefence: ${pDEF}\nLooting: ${pLOOT}\nFishing: ${pFISH}\nForaging: ${pFOR}\nMining: ${pMIN}\nAgility: ${pAG}\nAlertness: ${pAL}\nLuck: ${pLUCK}`);
     
     return message.channel.send(balEmbed)
   
