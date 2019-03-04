@@ -5,6 +5,7 @@ const bot = new Discord.Client({disableEveryone: true});
 bot.commands = new Discord.Collection();
 let players = require("./players.json");
 let bounty = require("./bounty.json");
+let stats = require("./stats.json");
 
 fs.readdir("./commands/", (err, files) => {
 
@@ -63,6 +64,18 @@ bot.on("message", async message => {
       lvlxp: 50,
       ct: false,
       quest: 1
+    }
+  }
+  
+  if(!stats[maid]) {
+    stats[maid] = {
+      attack: 1,
+      defence: 1,
+      fishing: 1,
+      looting: 1,
+      agility: 1,
+      alertness: 1,
+      luck: 1
     }
   }
   
