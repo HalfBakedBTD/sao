@@ -72,6 +72,7 @@ bot.on("message", async message => {
       attack: 1,
       defence: 1,
       fishing: 1,
+      foraging: 1,
       looting: 1,
       agility: 1,
       alertness: 1,
