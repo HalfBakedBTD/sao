@@ -11,7 +11,7 @@ module.exports.run = async (bot, message, args) => {
   let maid = message.author.id;
   if (claim_talked_users.has(message.author.id)) return message.reply("you have to wait before mining. You have to wait 6 minutes between foraging.");
   let dieAmt = Math.floor(Math.random() * 9) + 1;   
-  let coinGet += dieAmt + stats[maid].mining
+  let coinGet = dieAmt + stats[maid].mining
   players[maid].coins += coinGet
   let xpDie = Math.floor(Math.random() * 4) + 1;  
   players[maid].xp += xpDie
