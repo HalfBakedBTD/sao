@@ -22,7 +22,7 @@ module.exports.run = async (bot, message, args) => {
       xp: 0,
       lvlxp: 50,
       ct: false,
-      quest 1
+      quest: 1
     }
     return message.channel.send('User is now regestered into the system.');
   } else {
