@@ -100,6 +100,7 @@ bot.on("message", async message => {
   }
   
   while (players[maid].xp > players[maid].lvlxp) {
+    players[maid].lvl += 1
     players[maid].xp -= players[maid].lvlxp
     players[maid].lvlxp = players[maid].lvlxp * 2
     players[maid].health += 50
