@@ -88,7 +88,7 @@ bot.on("message", async message => {
       fruit: 0,
       egg: 0,
       root: 0,
-      folootback: 0,
+      folootbag: 0,
       sticks: 0,
       fish: 0,
       bfish: 0,
