@@ -15,13 +15,13 @@ module.exports.run = async (bot, message, args) => {
     let uFISH = stats[maid].fishing;
     let uLOOT = stats[maid].looting;
     let uAG = stats[maid].agility;
-    let uALL = stats[maid].allertness;
+    let uAL = stats[maid].alertness;
     let uLUCK = stats[maid].luck;
 
     //return message.reply(`you have:\n\n💰 Coins: ${uCoins}\n\n🏦 Bank: ${uBank}\n\n⛹ Net Worth: ${uNet}`)
     let balEmbed = new Discord.RichEmbed()
     .setColor('#2ecc71')
-    .setDescription(`**<@${maid}>**\n`)
+    .setDescription(`**<@${maid}>**\nAttack: ${uAT}\nDefence: ${uDEF}\nLooting: ${uLOOT}\nFishing: ${uFISH}\nAgility: ${uAG}\nAlertness: ${uAL}\nLuck: ${uLUCK}`);
     
     return message.channel.send(balEmbed)
   }
@@ -32,5 +32,5 @@ module.exports.run = async (bot, message, args) => {
 }
 
 module.exports.help = {
-  name: "profile"
+  name: "stats"
 }
