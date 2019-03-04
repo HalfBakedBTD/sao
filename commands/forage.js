@@ -14,14 +14,14 @@ module.exports.run = async (bot, message, args) => {
   let lootDie = Math.floor(Math.random() * 1) + 1; 
   lootDie = lootDie + stats[maid].foraging
   if (dieAmt > 950) {
-    inv[maid].foragelootbag += 1
+    inv[maid].folootbag += 1
     message.channel.send(`<@${message.author.id}> has went foraging and won a Foraging Lootbag.`);
   } else if (dieAmt > 800) {
     inv[maid].wheat += lootDie
     message.channel.send(`<@${message.author.id}> has went foraging and won ${lootDie} wheat.`);
   } else if (dieAmt > 650) {
     inv[maid].fruit += lootDie
-    return message.channel.send(`<@${message.author.id}> has went foraging and won ${lootDie} fruit.`);
+    message.channel.send(`<@${message.author.id}> has went foraging and won ${lootDie} fruit.`);
   } else if (dieAmt > 500) {
     inv[maid].root += lootDie
     message.channel.send(`<@${message.author.id}> has went foraging and won ${lootDie} root.`);
