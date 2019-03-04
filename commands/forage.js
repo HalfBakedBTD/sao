@@ -2,7 +2,7 @@ const Discord = require("discord.js");
 const fs = require("fs");
 let players = require("../players.json");
 
-const claim_cooldown_time = 4;
+const claim_cooldown_time = 240;
 const claim_talked_users = new Set();
 
 module.exports.run = async (bot, message, args) => {
@@ -12,7 +12,7 @@ module.exports.run = async (bot, message, args) => {
     claim_talked_users.add(message.author.id);
     setTimeout(() => {
       claim_talked_users.delete(message.author.id);
-    }, claim_cooldown_time * 60000);
+    }, claim_cooldown_time * 1000);
 }
 
 module.exports.help = {
