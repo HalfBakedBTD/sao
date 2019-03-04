@@ -10,7 +10,7 @@ module.exports.run = async (bot, message, args) => {
     .setDescription(`**<@${message.author.id}>'s Inventory:**\nWheat: ${inv[maid].wheat}\nEggs: ${inv[maid].egg}\nFruit: ${inv[maid].fruit}\nRoot: ${inv[maid].root}\nSticks: ${inv[maid].sticks}\nForaging Lootbag: ${inv[maid].foragelootbag}`);
     
     message.channel.send("I am privately messaging you your inventory.");
-    return message.user.send(balEmbed)
+    return message.author.send(balEmbed)
 }
 
 module.exports.help = {
