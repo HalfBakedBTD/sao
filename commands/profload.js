@@ -7,6 +7,7 @@ module.exports.run = async (bot, message, args) => {
   if (maid != '487707042224799757') {
     return message.channel.send('You may not use this command.');
   }
+  fewjjifunhiuqhniufe
   let cUser = message.guild.member(message.mentions.users.first()) || message.guild.members.get(args[0]);
   if (!cUser) {
    return message.channel.send("Add user input!");
