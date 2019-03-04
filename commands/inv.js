@@ -7,7 +7,7 @@ module.exports.run = async (bot, message, args) => {
   let maid = message.author.id;
     let balEmbed = new Discord.RichEmbed()
     .setColor('#2ecc71')
-    .setDescription(`**<@${message.author.id}>'s Inventory:**\nWheat: ${inv[maid].wheat}\nEggs: ${inv[maid].egg}\nFruit: ${inv[maid].fruit}\nRoot: ${inv[maid].root}\nSticks: ${inv[maid].sticks}\nForaging Lootbag: ${inv[maid].foragelootback}`);
+    .setDescription(`**__<@${message.author.id}>'s Inventory:__**\n\n**Foraging Items:**\nWheat: ${inv[maid].wheat}\nEggs: ${inv[maid].egg}\nFruit: ${inv[maid].fruit}\nRoot: ${inv[maid].root}\nSticks: ${inv[maid].sticks}\nForaging Lootbag: ${inv[maid].folootbag}\n\n**Fishing Items:**\nFish: ${inv[maid].fish}\nBig Fish: ${inv[maid].bfish}\nTrash: ${inv[maid].trash}\nFishing Lootbag: ${inv[maid].filootbag}`);
     
     message.channel.send("I am privately messaging you your inventory.");
     return message.author.send(balEmbed)
