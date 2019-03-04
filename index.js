@@ -6,6 +6,7 @@ bot.commands = new Discord.Collection();
 let players = require("./players.json");
 let bounty = require("./bounty.json");
 let stats = require("./stats.json");
+let inv = require("./inv.json");
 
 fs.readdir("./commands/", (err, files) => {
 
@@ -77,6 +78,17 @@ bot.on("message", async message => {
       agility: 1,
       alertness: 1,
       luck: 1
+    }
+  }
+  
+  if(!inv[maid]) {
+    inv[maid] = {
+      wheat: 0,
+      fruit: 0,
+      egg: 0,
+      root: 0,
+      foragelootback: 0,
+      sticks: 0
     }
   }
   
