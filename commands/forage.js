@@ -9,7 +9,7 @@ const claim_talked_users = new Set();
 
 module.exports.run = async (bot, message, args) => {
   let maid = message.author.id;
-  if (claim_talked_users.has(message.author.id)) return message.reply("you have to wait before foraging. You have to wait 4 minutes between foraging.");
+  if (claim_talked_users.has(message.author.id)) return message.reply("you have to wait before foraging. You have to wait 2 minutes between foraging.");
   let dieAmt = Math.floor(Math.random() * 999) + 1;   
   let lootDie = Math.floor(Math.random() * 1) + 1; 
   lootDie = lootDie + stats[maid].foraging
