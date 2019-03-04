@@ -4,7 +4,7 @@ let players = require("../players.json");
 let stats = require("../stats.json");
 let inv = require("../inv.json");
 
-const claim_cooldown_time = 240;
+const claim_cooldown_time = 120;
 const claim_talked_users = new Set();
 
 module.exports.run = async (bot, message, args) => {
