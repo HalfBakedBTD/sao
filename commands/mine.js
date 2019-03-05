@@ -20,7 +20,11 @@ module.exports.run = async (bot, message, args) => {
     stats[maid].mining += 1
   }
   message.channel.send(`<@${message.author.id}> has went mining and managed to find ${coinGet} coins. (+${xpDie}🌟)`);
-  
+  if (players[maid].quest = 1) {
+    let qno = players[maid].quest + 1;
+    players[maid].quest = qno
+    message.channel.send(`<@${message.author.id}> has just finished quest number three!`);
+  }
     claim_talked_users.add(message.author.id);
     setTimeout(() => {
       claim_talked_users.delete(message.author.id);
