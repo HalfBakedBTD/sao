@@ -41,7 +41,7 @@ module.exports.run = async (bot, message, args) => {
     let xpgDie = Math.floor(Math.random() * 9) + 1;
     players[maid].xp += xpgDie
   }
-  if (players[maid].quest < 3) {
+  if (players[maid].quest === 2) {
     let qno = players[maid].quest + 1;
     players[maid].quest = qno
     message.channel.send(`<@${message.author.id}> has just finished quest number two!`);
