@@ -6,7 +6,7 @@ let inv = require("../inv.json");
 
 module.exports.run = async (bot, message, args) => {
   let maid = message.author.id;
-  if (players[maid].quest = 1) {
+  if (players[maid].quest < 2) {
     return message.channel.send(`**${message.author}'s Quest:** Quest number ${players[maid].quest}.\nGo foraging with the command \`.forage\` to find new items!`);
   } else if (players[maid].quest = 1) {
     return message.channel.send(`**${message.author}'s Quest:** Quest number ${players[maid].quest}.\n`);
