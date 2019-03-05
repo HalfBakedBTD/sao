@@ -35,6 +35,11 @@ module.exports.run = async (bot, message, args) => {
       claim_talked_users.delete(message.author.id);
       players[maid].floor = inp
       players[maid].tdc = false
+      if (inp === 0) {
+        players[maid].location = "Safezone"
+      } else {
+        players[maid].location = `Floor ${inp}`
+      }
     }, time * 60000);
   } else {
     let time = players[maid].floor - inp;
@@ -47,6 +52,11 @@ module.exports.run = async (bot, message, args) => {
       claim_talked_users.delete(message.author.id);
       players[maid].floor = inp
       players[maid].tdc = false
+      if (inp = 0) {
+        players[maid].location = "Safezone"
+      } else {
+        players[maid].location = `Floor ${inp}`
+      }
     }, time * 60000);
   }
 }
