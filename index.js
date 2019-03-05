@@ -71,6 +71,10 @@ bot.on("message", async message => {
     }
   }
   
+  if (message.content.startsWith(".")) {
+    return message.reply(", you can use commands again once you have finished traveling.");
+  }
+  
   if(!stats[maid]) {
     stats[maid] = {
       attack: 1,
