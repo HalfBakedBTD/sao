@@ -24,17 +24,31 @@ module.exports.run = async (bot, message, args) => {
   //if (access > players[maid].quest) return message.reply(`, you must complete ${access} quests to reach floor ${inp}.`);
   
  
-  let time = inp - players[maid].floor;
+  if (inp > players[maid].floor) {
+    let time = inp - players[maid].floor;
   
 
-  players[maid].tdc = true
-  message.channel.send(`You are now traveling to floor ${inp}. This will take ${time} minutes.`);
+    players[maid].tdc = true
+    message.channel.send(`You are now traveling to floor ${inp}. This will take ${time} minutes.`);
     claim_talked_users.add(message.author.id);
     setTimeout(() => {
       claim_talked_users.delete(message.author.id);
       players[maid].floor = inp
       players[maid].tdc = false
     }, time * 60000);
+  } else {
+    let time = players[maid].floor - inp;
+  
+
+    players[maid].tdc = true
+    message.channel.send(`You are now traveling to floor ${inp}. This will take ${time} minutes.`);
+    claim_talked_users.add(message.author.id);
+    setTimeout(() => {
+      claim_talked_users.delete(message.author.id);
+      players[maid].floor = inp
+      players[maid].tdc = false
+    }, time * 60000);
+  }
 }
 
 module.exports.help = {
