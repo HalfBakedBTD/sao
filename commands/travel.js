@@ -21,12 +21,12 @@ module.exports.run = async (bot, message, args) => {
   }
   //return message.channel.send(`So you want to go to floor ${inp}...`);
   let access = inp * 10;
-  //if (access > players[maid].quest) return message.reply(`, you must complete ${access} quests to reach floor ${inp}.`);
-  
+  if (access > players[maid].quest) return message.reply(`, you must complete ${access} quests to reach floor ${inp}.`);
+  players[maid].location = "Traveling"
  
   if (inp > players[maid].floor) {
     let time = inp - players[maid].floor;
-  
+    
 
     players[maid].tdc = true
     message.channel.send(`You are now traveling to floor ${inp}. This will take ${time} minutes.`);
