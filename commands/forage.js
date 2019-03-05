@@ -44,6 +44,10 @@ module.exports.run = async (bot, message, args) => {
     let xpgDie = Math.floor(Math.random() * 9) + 1;
     players[maid].xp += xpgDie
   }
+  if (players[maid].quest = 1) {
+    players[maid].quest += 1
+    message.channel.send(`<@${message.author.id}) has just finished quest number one!`);
+  }
   
     claim_talked_users.add(message.author.id);
     setTimeout(() => {
