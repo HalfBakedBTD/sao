@@ -9,9 +9,9 @@ module.exports.run = async (bot, message, args) => {
   if (players[maid].quest < 2) {
     return message.channel.send(`**${message.author}'s Quest:** ${players[maid].quest}.\nGo foraging with the command \`.forage\` to find new items!`);
   } else if (players[maid].quest < 3) {
-    return message.channel.send(`**${message.author}'s Quest:** ${players[maid].quest}.\n`);
+    return message.channel.send(`**${message.author}'s Quest:** ${players[maid].quest}.\nDo \`.fish\` to try catching a big fish!`);
   } else if (players[maid].quest < 4) {
-    return message.channel.send(`**${message.author}'s Quest:** ${players[maid].quest}.\n`);
+    return message.channel.send(`**${message.author}'s Quest:** ${players[maid].quest}.\nTry typing \`.mine\` to get some more coins and expirience.`);
   } else if (players[maid].quest < 5) {
     return message.channel.send(`**${message.author}'s Quest:** ${players[maid].quest}.\n`);
   } else if (players[maid].quest < 6) {
