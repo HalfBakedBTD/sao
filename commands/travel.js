@@ -21,7 +21,7 @@ module.exports.run = async (bot, message, args) => {
   }
   //return message.channel.send(`So you want to go to floor ${inp}...`);
   let access = inp * 10;
-  if (access > players[maid].quest) return message.reply(`, you must complete ${access} quests to reach floor ${inp}.`);
+  //if (access > players[maid].quest) return message.reply(`, you must complete ${access} quests to reach floor ${inp}.`);
   
  
   if (inp > players[maid].floor) {
