@@ -23,11 +23,10 @@ module.exports.run = async (bot, message, args) => {
   let access = inp * 10;
   //if (access > players[maid].quest) return message.reply(`, you must complete ${access} quests to reach floor ${inp}.`);
   
-  if (inp > players[maid].floor) {
-    let time = inp - players[maid].floor;
-  } else {
-    let time = players[maid].floor - inp;
-  }
+ 
+  let time = inp - players[maid].floor;
+  
+
   players[maid].tdc = true
   message.channel.send(`You are now traveling to floor ${inp}. This will take ${time} minutes.`);
     claim_talked_users.add(message.author.id);
