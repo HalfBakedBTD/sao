@@ -20,7 +20,7 @@ module.exports.run = async (bot, message, args) => {
     stats[maid].mining += 1
   }
   message.channel.send(`<@${message.author.id}> has went mining and managed to find ${coinGet} coins. (+${xpDie}🌟)`);
-  if (players[maid].quest = 1) {
+  if (players[maid].quest = 3) {
     let qno = players[maid].quest + 1;
     players[maid].quest = qno
     message.channel.send(`<@${message.author.id}> has just finished quest number three!`);
