@@ -21,8 +21,8 @@ module.exports.run = async (bot, message, args) => {
   }
   //return message.channel.send(`So you want to go to floor ${inp}...`);
   let access = inp * 10;
-  //if (access > players[maid].quest) return message.reply(`, you must complete ${access} quests to reach floor ${inp}.`);
-  players[maid].location = "Traveling"
+  if (access > players[maid].quest) return message.reply(`, you must complete ${access} quests to reach floor ${inp}.`);
+  
  
   if (inp > players[maid].floor) {
     let time = inp - players[maid].floor;
@@ -35,11 +35,6 @@ module.exports.run = async (bot, message, args) => {
       claim_talked_users.delete(message.author.id);
       players[maid].floor = inp
       players[maid].tdc = false
-      if (inp === 0) {
-        players[maid].location = "Safezone"
-      } else {
-        players[maid].location = `Floor ${inp}`
-      }
     }, time * 60000);
   } else {
     let time = players[maid].floor - inp;
@@ -52,11 +47,6 @@ module.exports.run = async (bot, message, args) => {
       claim_talked_users.delete(message.author.id);
       players[maid].floor = inp
       players[maid].tdc = false
-      if (inp = 0) {
-        players[maid].location = "Safezone"
-      } else {
-        players[maid].location = `Floor ${inp}`
-      }
     }, time * 60000);
   }
 }
