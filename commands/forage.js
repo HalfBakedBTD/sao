@@ -46,7 +46,7 @@ module.exports.run = async (bot, message, args) => {
   }
   if (players[maid].quest = 1) {
     players[maid].quest += 1
-    message.channel.send(`<@${message.author.id}) has just finished quest number one!`);
+    message.channel.send(`<@${message.author.id}> has just finished quest number one!`);
   }
   
     claim_talked_users.add(message.author.id);
