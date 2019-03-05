@@ -13,7 +13,7 @@ module.exports.run = async (bot, message, args) => {
     let uCoins = players[maid].coins;
     let uHealth = players[maid].health;
     let uMHealth = players[maid].maxhealth;
-    let uLoc = players[maid].loction;
+    let uLoc = players[maid].floor;
     let uGuild = players[maid].guild;
     let uLvl = players[maid].lvl;
     let uXP = players[maid].xp;
@@ -22,7 +22,7 @@ module.exports.run = async (bot, message, args) => {
     //return message.reply(`you have:\n\n💰 Coins: ${uCoins}\n\n🏦 Bank: ${uBank}\n\n⛹ Net Worth: ${uNet}`)
     let balEmbed = new Discord.RichEmbed()
     .setColor('#2ecc71')
-    .setDescription(`**<@${maid}>**\nCoins: ${uCoins}\nHealth: ${uHealth}/${uMHealth}\nLocation: ${uLoc}\nGuild: ${uGuild}\nLevel: ${uLvl}\nXP: ${uXP}/${uXPLVL}`)
+    .setDescription(`**<@${maid}>**\nCoins: ${uCoins}\nHealth: ${uHealth}/${uMHealth}\nFloor: ${uLoc}\nGuild: ${uGuild}\nLevel: ${uLvl}\nXP: ${uXP}/${uXPLVL}`)
     
     return message.channel.send(balEmbed)
   }
@@ -33,7 +33,7 @@ module.exports.run = async (bot, message, args) => {
   let cCoins = players[cid].coins;
   let cHealth = players[cid].health;
   let cMHealth = players[cid].maxhealth;
-  let cLoc = players[cid].loction;
+  let cLoc = players[cid].floor;
   let cGuild = players[cid].guild;
   let cLvl = players[cid].lvl;
   let cXP = players[cid].xp;
